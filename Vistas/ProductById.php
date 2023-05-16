@@ -1,6 +1,6 @@
 <?php
-include_once('header.php');
-include_once('controllers/ProductController.php');
+#include_once('header.php');
+#include_once('controllers/ProductController.php');
 ?>
 
 <html>
@@ -56,5 +56,5 @@ include_once('controllers/ProductController.php');
 </html>
 
 <?php
-include_once('footer.php');
+#include_once('footer.php');
 ?>

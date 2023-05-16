@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <html>
 <head>
 	<title>Mi sitio web</title>
@@ -51,6 +52,8 @@
 			padding: 0.5rem 1rem;
 			border-radius: 5px;
 			transition: background-color 0.3s;
+			margin-right: 1rem;
+			margin-left: 1rem;
 		}
 
 		.login a:hover {
