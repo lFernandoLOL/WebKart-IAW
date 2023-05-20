@@ -8,7 +8,8 @@
         <style>
             .tabla {
                 border-collapse: collapse;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
+                margin-top: 30px;
             }
 
             .tabla th, .tabla td {
@@ -29,7 +30,7 @@
     </head>
     <body>
         <div class='container'>
-            <h1 style='color:black;'>Más información del producto seleccionado</h1>
+            <h1 style='color:black; margin-top: 20px;'>Más información del producto seleccionado</h1>
 
             <div class='table-container'>
                 <table class='tabla'>

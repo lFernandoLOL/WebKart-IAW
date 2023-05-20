@@ -33,8 +33,27 @@ if (isset($_POST["submit"]) && $_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 
   // Si no se encontraron errores, se envía el formulario
-  if (!$errores) {
-    echo "Formulario enviado con éxito.";
+  if ($errores = false) {
+    // Incluir el archivo de conexión a la base de datos
+    include_once('../db/db.php');
+    $db = Database::connect();
+
+
+    $stmt = $db->prepare("INSERT INTO usuarios (nombre, apellido, `correo`, `contraseña`) VALUES (:nombres, :apellidos, :correo, :contrasena)");
+
+
+    // Asignar los valores a los parámetros
+    $stmt->bindParam(':nombres', $nombres);
+    $stmt->bindParam(':apellidos', $apellidos);
+    $stmt->bindParam(':correo', $correo);
+    $stmt->bindParam(':contrasena', $contrasena);
+
+ 
+    if ($stmt->execute()) {
+      echo "Registro insertado con éxito.";
+    } else {
+      echo "Error al insertar el registro.";
+    }
   }
 }
 ?>
