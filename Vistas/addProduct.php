@@ -1,5 +1,5 @@
 <?php
-
+/*
 // Incluir el archivo de conexión a la base de datos
 include_once '../db/db.php';
 
@@ -39,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $db = null;
 
 }
+*/
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +90,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
     <div class="form-container">
         <h2>Formulario de Producto</h2>
-        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">
+        <!-- <form action=" ?php echo $_SERVER["PHP_SELF"]; ?>" method="POST"> -->
+        <form class="form" action="index.php?controller=ProductController&action=guardarProducto" method="post">
             <label for="nombre_prod">Nombre del Producto:</label>
             <input type="text" id="nombre_prod" name="nombre_prod" required>
 

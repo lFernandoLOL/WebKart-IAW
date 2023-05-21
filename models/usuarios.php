@@ -1,38 +1,19 @@
 <?php
-include_once 'db/db.php';
-/*
-$db= new Database();
-$conn = $db->connect();
+require_once 'db/db.php';
 
-
-$sql = $conn->prepare("SELECT Nombre_Prod from Productos");
-$sql->execute();
-$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
-print_r($resultado);
-*/
-
-class usuarioDAO{
-    public $bd_conn;
-
-
-    public function __construct() {
-        $this->bd_conn=Database::connect();
+class UsuarioDAO{
+    public $db_con;
+    public function __construct(){
+        $this->db_con=Database::connect();
     }
 
-
-
-
-    public function GetUsuarios(){
-     $stmt=$this->bd_conn->prepare("Select * from Usuarios");
-     $stmt->setFetchMode(PDO::FETCH_ASSOC);
-
-    try{
-      $stmt->execute();
-    } catch (PDOException $a) {
-      echo $a->getMessage();
+    // Metodo que toma los valores que hay en la tabla Users de la base de datos
+    public function getAllUsers($usuario,$contrasena){
+        $stmt=$this->db_con->prepare("select * from Users where usuario='$usuario' and contraseña='$contrasena'");
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
+}
 
-return $stmt->fetchAll();
-}
-}
 ?>

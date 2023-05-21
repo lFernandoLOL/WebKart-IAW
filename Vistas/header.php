@@ -99,6 +99,14 @@
 			<div class="login">
 				<a href="Vistas\index_L.php">Iniciar sesión</a>
 			</div>
+			<?php
+			if(empty($_SESSION['usuario'])){
+			echo "<div class='login'>";
+			echo "<a href='index.php?controller=ProductController&action=guardarProducto'>Añadir Producto</a>";
+
+			echo "</div>";
+			}
+			?>
 		</div>
 	</div>
 </header>

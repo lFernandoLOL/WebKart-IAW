@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado Productos</title>
-
+    <style>
+            .container {
+            margin-top: 10px;
+            margin-bottom: 10px;
+		}
+    </style>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="lista.css" rel="stylesheet">
@@ -23,8 +28,8 @@
                     echo '<div class="card shadow-sm">';
                     echo '<img src="Vistas/img/' . $article['Nombre_Prod'] . '.png" width="400px" height="300px">';
                         echo '<div class="card-body">';
-                                echo $article['Nombre_Prod'];
-                                echo $article['Precio'];
+                                #echo $article['Nombre_Prod'];
+                                #echo $article['Precio'];
                             
                             echo "<h5 class='card-title'>".$article['Nombre_Prod']."</h5>";
                             echo "<p class='card-text'>" .$article['Precio'] ."&#129689;</p>";

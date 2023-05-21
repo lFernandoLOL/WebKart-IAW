@@ -38,7 +38,27 @@ class productoDAO{
 
         return $stmt->fetch();
     }
+
+
+    public function guardaProducto($nombre_prod,$descripcion,$precio){
+        $stmt = $this->bd_conn->prepare("INSERT INTO Productos (Nombre_Prod, Descripcion, Precio) VALUES (:nombre_prod, :descripcion, :precio)");
+
+        // Vincular los valores de los parámetros con los datos del formulario
+        $stmt->bindParam(':nombre_prod', $nombre_prod);
+        $stmt->bindParam(':descripcion', $descripcion);
+        $stmt->bindParam(':precio', $precio);
+
+         // Ejecutar la consulta SQL
+         if ($stmt->execute()) {
+        // La inserción fue exitosa
+          #header("Location: index.php?controller=ProductController&action=getAllProducts");
+        exit();
+        } else {
+        echo "Error al añadir el producto.";
+         }
+
+    }
     }
 
-
+    
 ?>
