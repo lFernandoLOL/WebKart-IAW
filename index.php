@@ -1,14 +1,14 @@
 <?php
-include_once("Vistas/header.php");
-include("controllers/ProductController.php");
-
 if (isset($_REQUEST['action']) && isset($_REQUEST['controller'])) {
+    include("controllers/ProductController.php");
+    include("controllers/UserController.php");
     $act = $_REQUEST['action'];
     $cont = $_REQUEST['controller'];
 
     $controller = new $cont();
     $controller->$act();
 } else {
+    include_once("Vistas/header.php");
     // Página de entrada - Tienda de Objetos de Mario Kart
     echo '
     <div class="container mt-3">
@@ -21,7 +21,8 @@ if (isset($_REQUEST['action']) && isset($_REQUEST['controller'])) {
         
     </div>
     ';
+    require_once("Vistas/footer.php");
 }
 
-require_once("Vistas/footer.php");
+
 ?>

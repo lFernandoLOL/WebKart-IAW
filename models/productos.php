@@ -49,16 +49,16 @@ class productoDAO{
         $stmt->bindParam(':precio', $precio);
 
          // Ejecutar la consulta SQL
-         if ($stmt->execute()) {
-        // La inserción fue exitosa
-          #header("Location: index.php?controller=ProductController&action=getAllProducts");
-        exit();
-        } else {
-        echo "Error al añadir el producto.";
+         try{
+            $stmt->execute();
+        } catch (PDOException $a) {
+            echo $a->getMessage();
+        }
+
          }
 
     }
-    }
+    
 
     
 ?>

@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,7 +22,7 @@ body {
   left: 260px;
 }
 
-/*
+
 .form-register .avatar2{
   width: 70px;
   height: 50px;
@@ -30,7 +30,6 @@ body {
   top: 17px;
   left: 290px;
 }
-*/
 
 .form-register {
   width: 400px;
@@ -43,7 +42,7 @@ body {
   position: absolute;
   left: 36%;
   /*border-radius: 4px;*/
-  /* box-shadow: 7px 13px 37px #000; */
+  /* box-shadow: 7px 13px 37px #000; 
 }
 
 .form-register h4 {

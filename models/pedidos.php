@@ -6,7 +6,12 @@ $conn = $db->connect();
 
 
 $sql = $conn->prepare("SELECT Nombre_Prod from Productos");
+try{
 $sql->execute();
+}catch{(PDOException $a) {
+      echo $a->getMessage();
+  }
+
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 print_r($resultado);
 */

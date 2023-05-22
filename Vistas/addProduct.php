@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 }
 */
+
 ?>
 
 <!DOCTYPE html>
@@ -48,12 +49,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <title>Formulario de Producto</title>
     <style>
-                .form-container {
+            .form-container {
             width: 400px;
             margin: 0 auto;
             padding: 20px;
             background-color: #f2f2f2;
             border-radius: 5px;
+            margin-top: 30px;
+            margin-bottom: 30px;
         }
 
         .form-container h2 {

@@ -1,51 +1,49 @@
 <?php
-class ControllerUsu{
+include ("Vistas/View2.php");
+class UserController{
    
-
-// Metodo con el que se muestra la vista de inicio de sesion.    
-public function showiniciosesion(){
-    View::show("login");
-}
-
-// Metodo que valida la correcta insercion de datos en el inicio de sesion y comprueba si el usuario esta en la base de datos
-// lo que significaria que seria administrador por lo que se insertaria en un nuevo valor de $_SESSION para poder hacer validaciones
-// en otras vistas.
-public function validacioniniciosesion(){
-    $errores=array();
-    if(isset($_POST['iniciarsesion'])){
-        if(!isset($_POST['usuario'])||strlen($_POST['usuario'])==0){
-            $errores['usuario']="El nombre debe estar relleno";
-        }
-        if(!isset($_POST['contrasena'])||strlen($_POST['contrasena'])==0){
-            $errores['contrasena']="La contrasena no puede estar vacia";
-        }
-        if(empty($errores)){
-            include_once('models/usuarios.php');
-            include_once('models/productos.php');
-            $uDAO=new UsuarioDAO();
-            if(empty($uDAO->getAllUsers($_POST['usuario'],$_POST['contrasena']))){
-                $errores['general']="El usuario no esta registrado.";
-                View::show("login",$errores);
-            }else{
-                $pDAO=new ProductoDAO();
-                $products=$pDAO->getAllProducts();
-                $pDAO=null;
-                $_SESSION['usuario']=$_POST['usuario'];
-                View::show("showProducts", $products);
-            }
-        }else{
-            View::show("login",$errores);
-        }
-    }
-}
 
 // Metodo que cierra la sesion y te envia de nuevo al login
 public function cerrarsesion(){
     session_destroy();
-    View::show("login");
+    View2::show2("index_L");
 }
 
+public function iniciarsesion(){
+    View2::show2("index_L");
 }
+public function registro(){
+    View2::show2("index_R");
+}
+
+public function iniciosesion()
+    {
+        header("Location: index.php");
+        // Verificar si se ha enviado el formulario de inicio de sesión
+       /* if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            // Obtener los datos del formulario
+            $username = $_POST["username"];
+            $password = $_POST["password"];
+            
+            // Si la validación y autenticación son exitosas
+            include_once('models/productos.php');
+            include_once('models/usuarios.php');
+            
+            //Usar $_SESSION=_$POST['username']?? para el header y tal
+            $uDAO=new UsuarioDAO();
+
+            if ($uDAO->getUsers($username, $password) == true) {
+                $_SESSION['usuario'] = $username;
+                header("Location: index.php");
+            } else {
+                echo "Usuario o contraseña incorrectos";
+            }
+            
+        }*/
+    }
+
+}
+    
 
 
 

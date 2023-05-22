@@ -1,4 +1,3 @@
-
 <?php
 /**
  *  Controlador de Productos. Implementará todas las acciones que se puedan llevar a cabo desde las vistas
@@ -47,19 +46,63 @@ class ProductController {
     
             // Llamar al método guardaProducto de productoDAO para insertar el nuevo producto
             $pDAO->guardaProducto($nombre_prod, $descripcion, $precio);
-    
-            // Redireccionar a la página de mostrar todos los productos
-            header("Location: index.php?controller=ProductController&action=GetAllProducts");
             
-            exit();
+            // Redireccionar a la página de mostrar todos los productos
+            /* $products=$pDAO->GetAllProducts();
+            $pDAO=null;
+            var_dump($products);
+            View::show("showProducts", $products);
+            */
+            $pDAO=null;
+            $this->GetAllProducts();
+            
+    }else{
+        View::show("addProduct", null);
+    }
+    }
 
-        } else {
-            View::show("addProduct", null);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    public function addCarrito(){
+        if (isset($_GET['id_product'])){
+            array_push($_SESSION['carrito'],$_GET['id_product']);  
+            include_once 'models/productos.php';    
+            $pDAO=new ProductoDAO();
+            $products=$pDAO->getAllProducts();
+            $pDAO=null;
+            View::show("showProducts", $products);
         }
+    }
+
+    /*
+    Metodo que recorre nuestro array $_SESSION['carrito'] y va guardando las IDs de los productos del carrito en un nuevo array.
+    */
+    public function verCarrito(){
+        include_once 'models/productos.php';
+        $pDAO=new ProductoDAO();
+        $arrayCarrito= array();
+        foreach($_SESSION['carrito'] as $posicion => $id){
+            $producto=$pDAO-> getProductById($id);
+            array_push($arrayCarrito,$producto);
+        }
+        View::show("elcarrito", $arrayCarrito);
     }
     
 
-    // ...
 }
 
 
