@@ -62,13 +62,13 @@ class ProductController {
     }
 
 
+    public function MostrarContacto(){
+        View::show("contacto",null);
+    }
 
-
-
-
-
-
-
+    public function MostrarAcercade(){
+        View::show("acercade",null);
+    }
 
 
 
@@ -77,9 +77,13 @@ class ProductController {
 
 
     
-    public function addCarrito(){
-        if (isset($_GET['id_product'])){
-            array_push($_SESSION['carrito'],$_GET['id_product']);  
+    public function aniadirCarrito(){
+        if (!isset ($_SESSION['carrito'])) {
+            session_start();
+            $_SESSION['carrito']=array();
+        }
+        if (isset($_GET['id'])){
+            array_push($_SESSION['carrito'],$_GET['id']);  
             include_once 'models/productos.php';    
             $pDAO=new ProductoDAO();
             $products=$pDAO->getAllProducts();
@@ -88,10 +92,9 @@ class ProductController {
         }
     }
 
-    /*
-    Metodo que recorre nuestro array $_SESSION['carrito'] y va guardando las IDs de los productos del carrito en un nuevo array.
-    */
     public function verCarrito(){
+    
+
         include_once 'models/productos.php';
         $pDAO=new ProductoDAO();
         $arrayCarrito= array();

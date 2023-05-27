@@ -6,21 +6,22 @@ class UserController{
 // Metodo que cierra la sesion y te envia de nuevo al login
 public function cerrarsesion(){
     session_destroy();
-    View2::show2("index_L");
+    Ver2::show2("index_L");
 }
 
 public function iniciarsesion(){
-    View2::show2("index_L");
+    Ver2::show2("index_L");
 }
 public function registro(){
-    View2::show2("index_R");
+    Ver2::show2("index_R");
 }
+
 
 public function iniciosesion()
     {
-        header("Location: index.php");
+        #header("Location: index.php");
         // Verificar si se ha enviado el formulario de inicio de sesión
-       /* if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Obtener los datos del formulario
             $username = $_POST["username"];
             $password = $_POST["password"];
@@ -34,12 +35,16 @@ public function iniciosesion()
 
             if ($uDAO->getUsers($username, $password) == true) {
                 $_SESSION['usuario'] = $username;
-                header("Location: index.php");
+                #header("Location: index.php");
+                
+                #View::show("showProducts");
+                header("Location: index.php?controller=ProductController&action=getAllProducts");
             } else {
+                #header("Location: index.php?controller=UserController&action=iniciarsesion");
                 echo "Usuario o contraseña incorrectos";
             }
             
-        }*/
+        }
     }
 
 }

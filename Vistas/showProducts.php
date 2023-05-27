@@ -1,5 +1,4 @@
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,13 +38,11 @@
                                 echo '<div class="btn-group">';
                                 echo '<a href="index.php?controller=ProductController&action=ProductById&id=' . $article['ID_Producto'] . '" class="btn btn-primary">Detalles</a>';
                                 echo '</div>';
-                                echo '<a href="index.php?controller=ProductController&action=addCarrito&id=' . $article['ID_Producto'] . '" class="btn btn-success">Agregar</a>';
+                                echo '<a href="index.php?controller=ProductController&action=aniadirCarrito&id=' . $article['ID_Producto'] . '" class="btn btn-success">Agregar</a>';
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';
                 echo '</div>';
-
-                #echo $article['Nombre_Prod'].".png";
                 }
                 ?>
                 

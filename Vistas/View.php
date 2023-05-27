@@ -6,7 +6,6 @@
 
     */
 class View {
-    
     /*
      Método estático para mostrar una vista. Construye la vista utilizando la cabecera, la vista a mostrar y el pie de página. 
      Se le pueden pasar datos a la vista a través del parámetro $data.

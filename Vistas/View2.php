@@ -5,7 +5,9 @@
 
 
     */
-class View2 {
+
+    
+class Ver2 {
     
     /*
      Método estático para mostrar una vista. Construye la vista utilizando la cabecera, la vista a mostrar y el pie de página. 

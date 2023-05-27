@@ -1,11 +1,16 @@
+
 <style>
   .container{
     margin-top: 40px;
     margin-bottom: 41px;
   }
+  .alert {
+    width: 300px;
+    margin: 0 auto;
+  }
 </style>
 <div class="container">
-    <h2 style="text-align: center"> Carrito de la compra </h2><br><br>
+    <h2 style="text-align: center"> Resumen del carrito </h2><br><br>
 
       <?php
       if(!empty($_SESSION['carrito'])){
