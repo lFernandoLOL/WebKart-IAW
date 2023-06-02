@@ -1,20 +1,6 @@
 <?php
 include_once 'db/db.php';
-/*
-$db= new Database();
-$conn = $db->connect();
 
-
-$sql = $conn->prepare("SELECT Nombre_Prod from Productos");
-try{
-$sql->execute();
-}catch{(PDOException $a) {
-      echo $a->getMessage();
-  }
-
-$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
-print_r($resultado);
-*/
 
 class pedidoDAO{
     public $bd_conn;
@@ -36,9 +22,20 @@ class pedidoDAO{
       echo $a->getMessage();
     }
 
-return $stmt->fetchAll();
-}
+    return $stmt->fetchAll();
+  }
 
+
+   public function getPedidoByID(){
+
+
+  }
+
+/*
+  public function hacerPedido(){
+    $stmt=$this->bd_conn->prepare("Insert into pedidos");
+  }
+*/
 
 }
 ?>

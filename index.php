@@ -1,7 +1,9 @@
 <?php
+#session_start();
 if (isset($_REQUEST['action']) && isset($_REQUEST['controller'])) {
     include("controllers/ProductController.php");
     include("controllers/UserController.php");
+    include("controllers/OrderController.php");
     $act = $_REQUEST['action'];
     $cont = $_REQUEST['controller'];
 

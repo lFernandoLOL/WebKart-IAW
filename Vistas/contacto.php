@@ -51,24 +51,35 @@
     p {
       margin-bottom: 10px;
     }
+
   </style>
 </head>
 <body>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <h1 class="text-center">&#x260e; Contacto &#x260e;</h1> <br><br>
-        <img src="Vistas/img/contacto2.png" alt="Imagen izquierda" class="contact-image-left">
-        <address>
-          <strong>Dirección:</strong>
-          Av. Felipe Corchero, 37 06800 Mérida, Badajoz
-        </address>
-        <p><strong>Teléfono:</strong> +123 456789</p> 
-        <p><strong>Correo electrónico:</strong> mariokart@nintendo.com</p>
-        <img src="Vistas/img/contacto.png" alt="Imagen derecha" class="contact-image-right">
-      </div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center">&#x260e; Contacto &#x260e;</h1> <br><br>
+      <img src="Vistas/img/contacto2.png" alt="Imagen izquierda" class="contact-image-left">
+      <address>
+        <strong>Dirección:</strong>
+        Av. Felipe Corchero, 37 06800 Mérida, Badajoz
+      </address>
+      <p><strong>Teléfono:</strong> +123 456789</p> 
+      <p><strong>Correo electrónico:</strong> mariokart@nintendo.com</p>
+      <img src="Vistas/img/contacto.png" alt="Imagen derecha" class="contact-image-right">
+
+      <!-- Opciones adicionales de contacto -->
+      <p><strong>Redes sociales:</strong></p>
+      <ul>
+        <li><a href="https://www.facebook.com/MarioKartESP/" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/MKT_ESP" target="_blank">Twitter</a></li>
+        <li><a href="https://www.instagram.com/mario.kart/?hl=es" target="_blank">Instagram</a></li>
+      </ul>
+
     </div>
   </div>
+</div>
+
 
   <!-- Scripts de Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

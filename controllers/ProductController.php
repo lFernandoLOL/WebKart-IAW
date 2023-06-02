@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  *  Controlador de Productos. Implementará todas las acciones que se puedan llevar a cabo desde las vistas
  * que afecten a productos de la tienda.
@@ -41,7 +42,7 @@ class ProductController {
             $precio = $_POST["precio"];
       
             // Crear una instancia de la clase productoDAO para interactuar con la base de datos
-            require_once("models/productos.php");
+            include_once("models/productos.php");
             $pDAO = new productoDAO();
     
             // Llamar al método guardaProducto de productoDAO para insertar el nuevo producto
@@ -62,6 +63,18 @@ class ProductController {
     }
 
 
+    public function borrarproducto(){
+        include_once 'models/productos.php';
+        if (isset($_GET['id'])){
+            $pDAO=new ProductoDAO();
+            $products=$pDAO->borrarprod($_GET['id']);
+            $products=$pDAO->getAllProducts();
+            $pDAO=null;
+            View::show("showProducts", $products);
+        }
+    }
+
+
     public function MostrarContacto(){
         View::show("contacto",null);
     }
@@ -79,7 +92,6 @@ class ProductController {
     
     public function aniadirCarrito(){
         if (!isset ($_SESSION['carrito'])) {
-            session_start();
             $_SESSION['carrito']=array();
         }
         if (isset($_GET['id'])){
@@ -98,12 +110,36 @@ class ProductController {
         include_once 'models/productos.php';
         $pDAO=new ProductoDAO();
         $arrayCarrito= array();
+        if (isset ($_SESSION['carrito'])) {
+        
         foreach($_SESSION['carrito'] as $posicion => $id){
             $producto=$pDAO-> getProductById($id);
             array_push($arrayCarrito,$producto);
         }
+        }
         View::show("elcarrito", $arrayCarrito);
     }
+
+public function eliminarDelCarrito()
+{
+    // Verificar si se proporciona un ID de producto en la URL
+    if (isset($_GET['id'])) {
+        $idProducto = $_GET['id'];
+
+        // Buscar el ID de producto en el array del carrito
+        $key = array_search($idProducto, $_SESSION['carrito']);
+
+        // Verificar si se encontró el producto en el carrito
+        if ($key !== false) {
+            // Eliminar el producto del carrito
+            unset($_SESSION['carrito'][$key]);
+        }
+    }
+
+    // Mostrar el carrito actualizado
+    $this->verCarrito();
+}
+
     
 
 }

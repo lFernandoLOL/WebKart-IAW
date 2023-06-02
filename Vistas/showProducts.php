@@ -38,7 +38,15 @@
                                 echo '<div class="btn-group">';
                                 echo '<a href="index.php?controller=ProductController&action=ProductById&id=' . $article['ID_Producto'] . '" class="btn btn-primary">Detalles</a>';
                                 echo '</div>';
+                                if(isset($_SESSION['username'])){
+                                    if(($_SESSION['username']) == 'admin@admin.com'){
+                                    echo '<a href="index.php?controller=ProductController&action=borrarproducto&id=' . $article['ID_Producto'] . '" class="btn btn-danger">Borrar</a>';
+                                    }else{
                                 echo '<a href="index.php?controller=ProductController&action=aniadirCarrito&id=' . $article['ID_Producto'] . '" class="btn btn-success">Agregar</a>';
+                                    }
+                                }else{
+                                    echo '<a href="index.php?controller=ProductController&action=aniadirCarrito&id=' . $article['ID_Producto'] . '" class="btn btn-success">Agregar</a>';
+                                }
                             echo '</div>';
                         echo '</div>';
                     echo '</div>';

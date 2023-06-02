@@ -53,7 +53,14 @@ class productoDAO{
             echo $a->getMessage();
         }
 
-         }
+    }
+
+    public function borrarprod($id){
+        $stmt= $this->bd_conn->prepare("Delete from Productos where ID_Producto=$id");
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $stmt->execute();
+        return $stmt->fetch();       
+    }
 
     }
     

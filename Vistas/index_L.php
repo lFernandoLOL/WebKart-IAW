@@ -111,7 +111,7 @@ body {
         <!-- PASSWORD -->
         <label for="contrasena">Contraseña</label>
         <input type="password" name="password" placeholder="Introduzca la contraseña">
-        <input type="submit" value="iniciarsesion">
+        <input type="submit" value="Iniciar Sesion">
         <a href="#">¿No te acuerdas de la contraseña?</a><br>
         <a href="index.php?controller=UserController&action=registro">¿Aún sin cuenta? Regístrate</a>
       </form>

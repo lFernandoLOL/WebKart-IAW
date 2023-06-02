@@ -1,9 +1,6 @@
-
 <?php
 /*    Clase View para mostrar una vista. Contiene un método estático que deberá ser invocado
     desde cualquier controlador cuando hay que mostrar una vista.
-
-
     */
 class View {
     /*

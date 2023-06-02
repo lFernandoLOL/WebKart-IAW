@@ -34,9 +34,8 @@ public function iniciosesion()
             $uDAO=new UsuarioDAO();
 
             if ($uDAO->getUsers($username, $password) == true) {
-                $_SESSION['usuario'] = $username;
+                $_SESSION['username'] = $username;
                 #header("Location: index.php");
-                
                 #View::show("showProducts");
                 header("Location: index.php?controller=ProductController&action=getAllProducts");
             } else {
