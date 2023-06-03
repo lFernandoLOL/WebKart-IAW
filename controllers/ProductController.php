@@ -122,16 +122,16 @@ class ProductController {
 
 public function eliminarDelCarrito()
 {
-    // Verificar si se proporciona un ID de producto en la URL
+    // si se proporciona un ID de producto en la URL
     if (isset($_GET['id'])) {
         $idProducto = $_GET['id'];
 
-        // Buscar el ID de producto en el array del carrito
+        // busca el ID de producto en el array del carrito
         $key = array_search($idProducto, $_SESSION['carrito']);
 
-        // Verificar si se encontró el producto en el carrito
+        // si se encontró el producto en el carrito
         if ($key !== false) {
-            // Eliminar el producto del carrito
+            // elimina el producto del carrito
             unset($_SESSION['carrito'][$key]);
         }
     }
