@@ -99,10 +99,16 @@
 		</nav>
 		<div class="header-right">
 			<div class="cart">
-			<?php if($_SESSION['username'] != 'admin@admin.com'){
+			<?php
+			if (empty($_SESSION['username'])) {
 				echo "<a href='index.php?controller=ProductController&action=verCarrito'><i class='fas fa-shopping-cart'></i> Carrito</a>";
+			} else {
+				if ($_SESSION['username'] != 'admin@admin.com') {
+					echo "<a href='index.php?controller=ProductController&action=verCarrito'><i class='fas fa-shopping-cart'></i> Carrito</a>";
+				}
 			}
 			?>
+
 			</div>
 			<?php
 			if(empty($_SESSION['username'])){
