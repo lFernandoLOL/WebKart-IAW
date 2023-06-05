@@ -112,7 +112,7 @@ class ProductController {
         $arrayCarrito= array();
         if (isset ($_SESSION['carrito'])) {
         
-        foreach($_SESSION['carrito'] as $posicion => $id){
+        foreach($_SESSION['carrito'] as $id){
             $producto=$pDAO-> getProductById($id);
             array_push($arrayCarrito,$producto);
         }

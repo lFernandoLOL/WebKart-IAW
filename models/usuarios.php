@@ -14,11 +14,14 @@ class UsuarioDAO{
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $password);
         $stmt->execute();
-    
+        
+        #$idusu = $stmt = $this->db_con->prepare("SELECT ID_Usuario FROM Usuarios WHERE Correo = $username");
+        #$stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
     
         if (!empty($result)) {
             // El usuario existe en la base de datos si $result esta lleno
+            $_SESSION["ID_Usuario"] = $result['ID_Usuario'];
             return true;
         } else {
             // El usuario no existe o las credenciales son incorrectas si $result esta vacio

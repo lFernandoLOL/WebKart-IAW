@@ -11,6 +11,7 @@ if (isset($_REQUEST['action']) && isset($_REQUEST['controller'])) {
     $controller->$act();
 } else {
     include_once("Vistas/header.php");
+    #echo $_SESSION['ID_Usuario'];
     // Página de entrada - Tienda de Objetos de Mario Kart
     echo '
     <div class="container mt-3">

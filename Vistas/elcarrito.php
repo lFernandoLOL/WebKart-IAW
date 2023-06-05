@@ -23,7 +23,8 @@
         }
         echo "</table>";
         echo "<div style='text-align: right;'>
-        <button class='btn btn-success' style='background: linear-gradient( #7ae8a6, #50c878); margin-bottom:30px; margin-top:20px;'>Efectuar pedido</button>
+        <a href='index.php?controller=OrderController&action=hacerPedido' class='btn btn-success' style='background: linear-gradient(#7ae8a6, #50c878); margin-bottom: 30px; margin-top: 20px;'>Efectuar pedido</a>
+
       </div>";
 
 

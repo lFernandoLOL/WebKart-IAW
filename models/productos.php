@@ -46,7 +46,7 @@ class productoDAO{
         $stmt->bindParam(':descripcion', $descripcion);
         $stmt->bindParam(':precio', $precio);
 
-         // Ejecutar la consulta SQL
+
          try{
             $stmt->execute();
         } catch (PDOException $a) {
