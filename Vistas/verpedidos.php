@@ -13,7 +13,7 @@ echo "<tr>
     <td style='color: black;'>" . $pedido['ID_Pedido'] . "</td>
     <td style='color: black;'>" . $pedido['fecha'] . "</td>
     <td style='color: black;'>" . $pedido['ID_Usuario'] . "</td>
-    <td style='color: black;'><a href='index.php?controller=OrderController&action=GetproductsByPedido'>Detalles</a></td>
+    <td style='color: black;'><a href='index.php?controller=OrderController&action=GetproductsByPedido&pedido_id=" . $pedido['ID_Pedido'] . "'>Detalles</td>
 
 </tr>";
 }

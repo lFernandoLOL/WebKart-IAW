@@ -61,7 +61,18 @@ class pedidoDAO{
       return $result;
   }
   
-    
+  public function getProductosByPedidoID($pedidoID) {
+    $stmt = $this->bd_conn->prepare("SELECT Prod_Pedidos.Cantidad, Productos.Nombre_Prod, Productos.Precio FROM Prod_Pedidos INNER JOIN Productos ON Prod_Pedidos.ID_Producto = Productos.ID_Producto WHERE Prod_Pedidos.ID_Pedido = :pedidoID");
+    $stmt->bindParam(':pedidoID', $pedidoID);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
+
+
   
 /*
   public function hacerPedido(){

@@ -37,7 +37,7 @@ if (isset($_POST["submit"]) && $_SERVER['REQUEST_METHOD'] == 'POST') {
   // Si no se encontraron errores, se envía el formulario
   if ($errores == false) {
     // Incluir el archivo de conexión a la base de datos
-    include_once('../db/db.php');
+    include_once(__DIR__ . '/../db/db.php');
     $db = Database::connect();
 
 
