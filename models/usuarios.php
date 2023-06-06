@@ -7,7 +7,7 @@ class UsuarioDAO{
         $this->db_con=Database::connect();
     }
 
-    // Metodo que toma los valores que hay en la tabla Users de la base de datos
+    // Metodo que pilla los valores que hay en la tabla Users de la base de datos
 
     public function getUsers($username, $password) {
         $stmt = $this->db_con->prepare("SELECT * FROM Usuarios WHERE Correo = :username AND Contraseña = :password");

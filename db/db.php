@@ -2,9 +2,8 @@
 class Database {
 private $db=null;
 
-/**
- * Método que inicia la conexión y la devuelve.
- */
+
+// Método que inicia la conexión y la devuelve.
 public static function connect ()
 {
     $host='mariadb';

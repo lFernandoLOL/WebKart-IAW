@@ -26,7 +26,7 @@ public function iniciosesion()
             $username = $_POST["username"];
             $password = $_POST["password"];
             
-            // Si la validación y autenticación son exitosas
+            // Si la validación y autenticación son correctas
             include_once('models/productos.php');
             include_once('models/usuarios.php');
             

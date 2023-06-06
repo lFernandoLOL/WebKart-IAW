@@ -7,9 +7,7 @@ session_start();
 include ("Vistas/View.php");
 class ProductController {
 
-    /*
-      Método que obtiene todos los productos de la BBDD y los muestra a través de la vista showProducts.
-     */
+    //Método que obtiene todos los productos de la BBDD y los muestra a través de la vista showProducts.
     public function GetAllProducts (){
         require_once ("models/productos.php");
         $pDAO=new ProductoDAO();
@@ -18,9 +16,7 @@ class ProductController {
         View::show("showProducts", $products);
     }
 
-    /*
-      Metodo mediante el cual se obtiene un producto de la base de datos buscandolo por su Identificador que obtendremos mediante el metodo GET.
-     */
+      //Metodo mediante el cual se obtiene un producto de la base de datos buscandolo por su Identificador que obtendremos mediante el metodo GET.
     public function ProductByID (){
         if (isset($_GET['id'])){
             require_once ("models/productos.php");
@@ -41,14 +37,13 @@ class ProductController {
             $descripcion = $_POST["descripcion"];
             $precio = $_POST["precio"];
       
-            // Crear una instancia de la clase productoDAO para interactuar con la base de datos
             include_once("models/productos.php");
             $pDAO = new productoDAO();
     
-            // Llamar al método guardaProducto de productoDAO para insertar el nuevo producto
+            // método guardaProducto
             $pDAO->guardaProducto($nombre_prod, $descripcion, $precio);
             
-            // Redireccionar a la página de mostrar todos los productos
+            // pagina de mostrar todos los productos
             /* $products=$pDAO->GetAllProducts();
             $pDAO=null;
             var_dump($products);
