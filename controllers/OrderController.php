@@ -72,10 +72,6 @@ public function hacerPedido(){
             #header("Location: detalles_pedido.php?pedido_id=" . $pedidoID);
             View::show("pedido", $productosPedido);
             exit();
-        } else {
-            // Si no se proporciona un ID de pedido, redirigir a otra página o mostrar un mensaje de error
-            header("Location: index.php");
-            exit();
         }
     }
     
