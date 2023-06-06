@@ -101,10 +101,10 @@
 			<h3>Enlaces útiles</h3>
 			<ul>
 				<li><a href="#">Inicio</a></li>
-				<li><a href="#">Acerca de</a></li>
-				<li><a href="#">Contacto</a></li>
-				<li><a href="#">Política de privacidad</a></li>
-				<li><a href="#">Términos y condiciones</a></li>
+				<li><a href="index.php?controller=ProductController&action=MostrarAcercade">Acerca de</a></li>
+				<li><a href="index.php?controller=ProductController&action=MostrarContacto">Contacto</a></li>
+				<li><a href="index.php?controller=ProductController&action=MostrarAcercade">Política de privacidad</a></li>
+				<!--<li><a href="#">Términos y condiciones</a></li>-->
 			</ul>
 		</div>
 

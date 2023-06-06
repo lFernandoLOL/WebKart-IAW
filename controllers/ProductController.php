@@ -140,6 +140,26 @@ public function eliminarDelCarrito()
     $this->verCarrito();
 }
 
+
+public function buscarProductos()
+{
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["searchInput"])) {
+        $searchTerm = $_POST["searchInput"];
+        
+        include_once("models/productos.php");
+        $pDAO = new ProductoDAO();
+
+        //productos que coincidan con el término de búsqueda
+        $products = $pDAO->searchProducts($searchTerm);
+
+        // Mostrar los productos encontrados
+        $pDAO = null;
+        View::show("showProducts", $products);
+    } else {
+        $this->GetAllProducts();
+    }
+}
+
     
 
 }

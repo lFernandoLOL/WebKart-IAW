@@ -62,8 +62,25 @@ class productoDAO{
         return $stmt->fetch();       
     }
 
+
+
+
+    public function searchProducts($searchTerm)
+    {
+        $stmt = $this->bd_conn->prepare("SELECT * FROM Productos WHERE Nombre_Prod LIKE :searchTerm");
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $searchTerm = "%$searchTerm%";
+        $stmt->bindParam(':searchTerm', $searchTerm);
+
+        try {
+            $stmt->execute();
+        } catch (PDOException $a) {
+            echo $a->getMessage();
+        }
+
+        return $stmt->fetchAll();
     }
     
 
-    
+}
 ?>

@@ -39,7 +39,8 @@ public function hacerPedido(){
         $_SESSION['carrito'] = array();
 
         //página de ver pedidos
-        $this->MostrarPedidoID();
+        #$this->MostrarPedidoID();
+        View::show("confirmacion",null);
     } else {
         
     }

@@ -20,6 +20,13 @@
   
     <main>
         <div class="container">
+        <div class="search-form">
+        <form action="index.php?controller=ProductController&action=buscarProductos" method="POST" class="d-flex mt-3">
+            <input type="text" name="searchInput" placeholder="Buscar producto" class="form-control me-2">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+        <br>
+            </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <?php
                 foreach ($data as $article){
